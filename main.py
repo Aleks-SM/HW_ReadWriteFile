@@ -1,15 +1,14 @@
 def read_file():
     file = open('recipes.txt', 'r')
-    data = []
+    data = {}
     for line in file:
-      data.append(line.strip())
+        data[line.strip()] = []
+        count = file.readline().strip()
+        for i in line:
+            ing, me, qua = file.readline().strip().split(' | ')
+            data[line.strip()].append('ing': ing, 'me': me, 'qua': qua)
+        file.readline()
     file.close()
-    # while True:
-    #     line = file.readline().strip()
-    #     data.append(file.readline().strip())
-    # # Если конец файла
-    #     if not line:
-    #         break  
     return data
   
-pprint(read_file())
+pprint(read_file(), sirt_dicts = False)
