@@ -24,25 +24,6 @@ def orders_ing(data, recipe, person):
     return rec
 
 
-def input_orders():
-    data = read_file()
-    order = []
-    tmp = {}
-    for i, j in enumerate(data):
-        tmp[i] = j
-        print(f"{i+1} {j}")
-    for i in range(len(data) + 1):
-        s = input('Введите номер блюда из списка или "e" для завершения\n')
-        if s == 'e':
-            break
-        elif 1 <= int(s) <= len(data):
-            order.append(tmp.get(int(s) - 1))
-        else:
-            print(f'Номер {s} блюда введен неверно')
-    print('Ваш заказ:', ', '.join(order))
-    return order
-
-
 def get_shop_list_by_dishes(dishes, person_count):
     tmp = {}
     for recipe in dishes:
@@ -61,7 +42,5 @@ def get_shop_list_by_dishes(dishes, person_count):
     return tmp
 
 
-#pprint(read_file(), sort_dicts=False)
-#pprint(orders_ing(read_file(), 'Омлет',3), sort_dicts=False)
-#input_orders()
+pprint(read_file(), sort_dicts=False)
 pprint(get_shop_list_by_dishes(['Фахитос', 'Омлет'], 3), sort_dicts=False)
