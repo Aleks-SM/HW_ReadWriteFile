@@ -2,5 +2,6 @@
 venv/
 bin/
 lib/
+__pycache__/
 temp.py
 pyvenv.cfg
